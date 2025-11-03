@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jelajah Nusantara - Web Pariwisata</title>
     
-    <!-- Memuat Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Memuat Font Inter dari Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Memuat Font Inter dari Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Memuat Ikon Lucide -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Memuat Ikon Lucide --><script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
         /* Mengatur font default ke Inter */
@@ -24,7 +21,9 @@
         
         /* Efek paralaks sederhana untuk hero */
         .hero-bg {
-            background-image: url('https://source.unsplash.com/1920x1080/?indonesia-landscape');
+            /* Menggunakan gambar pariwisata yang lebih spesifik dan ikonik */
+            /* URL disederhanakan untuk memuat lebih cepat dan andal */
+            background-image: url('https://travel.kompas.com/read/2022/07/03/134542127/9-pulau-di-taman-nasional-komodo-kunjungi-saat-liburan-ke-sana?page=all'); 
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -53,11 +52,9 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Kotak Pesan Kustom (Pengganti Alert) -->
-    <div id="custom-message"></div>
+    <!-- Kotak Pesan Kustom (Pengganti Alert) --><div id="custom-message"></div>
 
-    <!-- Header dan Navigasi -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <!-- Header dan Navigasi --><header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-blue-600">
                 Jelajah<span class="text-sky-500">Nusantara</span>
@@ -67,7 +64,7 @@
                 <a href="#galeri" class="text-gray-600 hover:text-blue-600 transition-colors">Galeri</a>
                 <a href="#promo" class="text-gray-600 hover:text-blue-600 transition-colors">Promo</a>
                 <a href="#testimoni" class="text-gray-600 hover:text-blue-600 transition-colors">Testimoni</a>
-                <a href="#pesan" class="bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-md">
+                <a href href="#pesan" class="bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-md">
                     Pesan Tiket
                 </a>
             </div>
@@ -78,10 +75,8 @@
     </header>
 
     <main>
-        <!-- 1. Headline Menarik (Hero Section) -->
-        <section class="hero-bg h-[60vh] md:h-[80vh] flex items-center justify-center text-white relative">
-            <div class="absolute inset-0 bg-black opacity-40"></div> <!-- Overlay -->
-            <div class="container mx-auto px-6 text-center z-10">
+        <!-- 1. Headline Menarik (Hero Section) --><section class="hero-bg h-[60vh] md:h-[80vh] flex items-center justify-center text-white relative">
+            <div class="absolute inset-0 bg-black opacity-40"></div> <!-- Overlay --><div class="container mx-auto px-6 text-center z-10">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight shadow-text">
                     Temukan Keindahan Tersembunyi
                 </h1>
@@ -94,16 +89,14 @@
             </div>
         </section>
 
-        <!-- 2. Informasi Destinasi, 5. Deskripsi, 6. Gambar Berkualitas -->
-        <section id="destinasi" class="py-16 md:py-24 bg-white">
+        <!-- 2. Informasi Destinasi, 5. Deskripsi, 6. Gambar Berkualitas --><section id="destinasi" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
                     Destinasi Populer
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Kartu Destinasi 1 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+                    <!-- Kartu Destinasi 1 --><div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
                         <img src="https://source.unsplash.com/600x400/?raja-ampat-islands" alt="Raja Ampat" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x400/007BFF/FFFFFF?text=Raja+Ampat'; this.onerror=null;">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-2">Raja Ampat, Papua</h3>
@@ -114,8 +107,7 @@
                         </div>
                     </div>
 
-                    <!-- Kartu Destinasi 2 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+                    <!-- Kartu Destinasi 2 --><div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
                         <img src="https://source.unsplash.com/600x400/?ubud-rice-field" alt="Ubud, Bali" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x400/28A745/FFFFFF?text=Ubud,+Bali'; this.onerror=null;">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-2">Ubud, Bali</h3>
@@ -126,8 +118,7 @@
                         </div>
                     </div>
 
-                    <!-- Kartu Destinasi 3 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+                    <!-- Kartu Destinasi 3 --><div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
                         <img src="https://source.unsplash.com/600x400/?mount-bromo" alt="Gunung Bromo" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x400/FFC107/333333?text=Gunung+Bromo'; this.onerror=null;">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-2">Gunung Bromo, Jatim</h3>
@@ -142,58 +133,47 @@
             </div>
         </section>
 
-        <!-- 6. Galeri Petualangan (Tambahan) -->
-        <section id="galeri" class="py-16 md:py-24 bg-gray-50">
+        <!-- 6. Galeri Petualangan (Tambahan) --><section id="galeri" class="py-16 md:py-24 bg-gray-50">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
                     Galeri Petualangan
                 </h2>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                    <!-- Gambar 1 -->
-                    <div class="overflow-hidden rounded-xl shadow-lg">
+                    <!-- Gambar 1 --><div class="overflow-hidden rounded-xl shadow-lg">
                         <img src="https://source.unsplash.com/600x600/?borobudur-temple" alt="Candi Borobudur" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/9C27B0/FFFFFF?text=Borobudur'; this.onerror=null;">
                     </div>
-                    <!-- Gambar 2 -->
-                    <div class="overflow-hidden rounded-xl shadow-lg">
+                    <!-- Gambar 2 --><div class="overflow-hidden rounded-xl shadow-lg">
                         <img src="https://source.unsplash.com/600x600/?komodo-dragon" alt="Komodo Dragon" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/795548/FFFFFF?text=Komodo'; this.onerror=null;">
                     </div>
-                    <!-- Gambar 3 -->
-                    <div class="overflow-hidden rounded-xl shadow-lg">
+                    <!-- Gambar 3 --><div class="overflow-hidden rounded-xl shadow-lg">
                         <img src="https://source.unsplash.com/600x600/?bali-beach" alt="Pantai Bali" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/03A9F4/FFFFFF?text=Bali'; this.onerror=null;">
                     </div>
-                    <!-- Gambar 4 -->
-                    <div class="overflow-hidden rounded-xl shadow-lg">
+                    <!-- Gambar 4 --><div class="overflow-hidden rounded-xl shadow-lg">
                         <img src="https://source.unsplash.com/600x600/?indonesia-diving" alt="Diving Indonesia" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/00BCD4/FFFFFF?text=Diving'; this.onerror=null;">
                     </div>
-                    <!-- Gambar 5 -->
-                    <div class="overflow-hidden rounded-xl shadow-lg">
+                    <!-- Gambar 5 --><div class="overflow-hidden rounded-xl shadow-lg">
                         <img src="https://source.unsplash.com/600x600/?indonesia-waterfall" alt="Air Terjun Indonesia" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/4CAF50/FFFFFF?text=Waterfall'; this.onerror=null;">
                     </div>
-                    <!-- Gambar 6 -->
-                    <div class="overflow-hidden rounded-xl shadow-lg">
+                    <!-- Gambar 6 --><div class="overflow-hidden rounded-xl shadow-lg">
                         <img src="https://source.unsplash.com/600x600/?tana-toraja" alt="Tana Toraja" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/FF5722/FFFFFF?text=Toraja'; this.onerror=null;">
                     </div>
-                    <!-- Gambar 7 -->
-                    <div class="overflow-hidden rounded-xl shadow-lg">
+                    <!-- Gambar 7 --><div class="overflow-hidden rounded-xl shadow-lg">
                         <img src="https://source.unsplash.com/600x600/?lake-toba" alt="Danau Toba" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/3F51B5/FFFFFF?text=Toba'; this.onerror=null;">
                     </div>
-                    <!-- Gambar 8 -->
-                    <div class="overflow-hidden rounded-xl shadow-lg">
+                    <!-- Gambar 8 --><div class="overflow-hidden rounded-xl shadow-lg">
                         <img src="https://source.unsplash.com/600x600/?jakarta-cityscape" alt="Jakarta Cityscape" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/607D8B/FFFFFF?text=Jakarta'; this.onerror=null;">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Tampilkan Promo dan Diskon -->
-        <section id="promo" class="py-16 md:py-24 bg-blue-50">
+        <!-- 4. Tampilkan Promo dan Diskon --><section id="promo" class="py-16 md:py-24 bg-blue-50">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
                     Promo dan Diskon Spesial
                 </h2>
                 <div class="flex flex-col lg:flex-row gap-8">
-                    <!-- Banner Promo 1 -->
-                    <div class="flex-1 bg-gradient-to-r from-blue-600 to-sky-500 text-white p-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <!-- Banner Promo 1 --><div class="flex-1 bg-gradient-to-r from-blue-600 to-sky-500 text-white p-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-6">
                         <div class="flex-shrink-0">
                             <i data-lucide="tag" class="w-20 h-20 text-sky-200"></i>
                         </div>
@@ -205,8 +185,7 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Banner Promo 2 -->
-                    <div class="flex-1 bg-gradient-to-r from-green-600 to-emerald-500 text-white p-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <!-- Banner Promo 2 --><div class="flex-1 bg-gradient-to-r from-green-600 to-emerald-500 text-white p-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-6">
                         <div class="flex-shrink-0">
                             <i data-lucide="plane" class="w-20 h-20 text-emerald-200"></i>
                         </div>
@@ -222,8 +201,7 @@
             </div>
         </section>
 
-        <!-- 3. Fitur Pemesanan Tiket -->
-        <section id="pesan" class="py-16 md:py-24 bg-white">
+        <!-- 3. Fitur Pemesanan Tiket --><section id="pesan" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6 max-w-4xl">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
                     Pesan Tiket Anda Sekarang
@@ -261,15 +239,13 @@
             </div>
         </section>
 
-        <!-- 7. Tampilkan Riwayat Perjalanan dan Testimoni -->
-        <section id="testimoni" class="py-16 md:py-24 bg-gray-100">
+        <!-- 7. Tampilkan Riwayat Perjalanan dan Testimoni --><section id="testimoni" class="py-16 md:py-24 bg-gray-100">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
                     Apa Kata Mereka?
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Testimoni 1 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <!-- Testimoni 1 --><div class="bg-white p-8 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
                             <img src="https://source.unsplash.com/100x100/?man-portrait" alt="Testimoni" class="w-16 h-16 rounded-full mr-4 object-cover" onerror="this.src='https://placehold.co/100x100/E8F5E9/333333?text=AR'; this.onerror=null;">
                             <div>
@@ -278,15 +254,13 @@
                             </div>
                         </div>
                         <div class="text-yellow-500 mb-2">
-                            &#9733;&#9733;&#9733;&#9733;&#9733; <!-- 5 Bintang -->
-                        </div>
+                            &#9733;&#9733;&#9733;&#9733;&#9733; <!-- 5 Bintang --></div>
                         <p class="text-gray-600 italic">
                             "Layanan dari JelajahNusantara luar biasa! Perjalanan saya ke Bromo sangat lancar dan berkesan. Terima kasih!"
                         </p>
                     </div>
 
-                    <!-- Testimoni 2 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <!-- Testimoni 2 --><div class="bg-white p-8 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
                             <img src="https://source.unsplash.com/100x100/?woman-portrait" alt="Testimoni" class="w-16 h-16 rounded-full mr-4 object-cover" onerror="this.src='https://placehold.co/100x100/FFF3E0/333333?text=SP'; this.onerror=null;">
                             <div>
@@ -295,15 +269,13 @@
                             </div>
                         </div>
                         <div class="text-yellow-500 mb-2">
-                            &#9733;&#9733;&#9733;&#9733;&#9733; <!-- 5 Bintang -->
-                        </div>
+                            &#9733;&#9733;&#9733;&#9733;&#9733; <!-- 5 Bintang --></div>
                         <p class="text-gray-600 italic">
                             "Promo liburannya sangat membantu. Anak-anak senang sekali bisa ke Bali dengan harga terjangkau. Proses booking juga mudah."
                         </p>
                     </div>
 
-                    <!-- Testimoni 3 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <!-- Testimoni 3 --><div class="bg-white p-8 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
                             <img src="https://source.unsplash.com/100x100/?male-portrait" alt="Testimoni" class="w-16 h-16 rounded-full mr-4 object-cover" onerror="this.src='https://placehold.co/100x100/E3F2FD/333333?text=BW'; this.onerror=null;">
                             <div>
@@ -312,8 +284,7 @@
                             </div>
                         </div>
                         <div class="text-yellow-500 mb-2">
-                            &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 Bintang -->
-                        </div>
+                            &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 Bintang --></div>
                         <p class="text-gray-600 italic">
                             "Pilihan destinasinya lengkap. Saya harap ke depannya bisa ditambahkan lebih banyak paket untuk backpacker."
                         </p>
@@ -323,8 +294,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-16">
+    <!-- Footer --><footer class="bg-gray-900 text-gray-300 py-16">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
