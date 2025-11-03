@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajah Nusantara - Web Pariwisata</title>
+    
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Memuat Font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Memuat Ikon Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Mengatur font default ke Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Efek paralaks sederhana untuk hero */
+        .hero-bg {
+            background-image: url('https://source.unsplash.com/1920x1080/?indonesia-landscape');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Styling untuk kotak pesan kustom (pengganti alert) */
+        #custom-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease, top 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        #custom-message.show {
+            opacity: 1;
+            top: 40px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Kotak Pesan Kustom (Pengganti Alert) -->
+    <div id="custom-message"></div>
+
+    <!-- Header dan Navigasi -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600">
+                Jelajah<span class="text-sky-500">Nusantara</span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#destinasi" class="text-gray-600 hover:text-blue-600 transition-colors">Destinasi</a>
+                <a href="#galeri" class="text-gray-600 hover:text-blue-600 transition-colors">Galeri</a>
+                <a href="#promo" class="text-gray-600 hover:text-blue-600 transition-colors">Promo</a>
+                <a href="#testimoni" class="text-gray-600 hover:text-blue-600 transition-colors">Testimoni</a>
+                <a href="#pesan" class="bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-md">
+                    Pesan Tiket
+                </a>
+            </div>
+            <button class="md:hidden text-gray-700">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Headline Menarik (Hero Section) -->
+        <section class="hero-bg h-[60vh] md:h-[80vh] flex items-center justify-center text-white relative">
+            <div class="absolute inset-0 bg-black opacity-40"></div> <!-- Overlay -->
+            <div class="container mx-auto px-6 text-center z-10">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight shadow-text">
+                    Temukan Keindahan Tersembunyi
+                </h1>
+                <p class="text-lg md:text-2xl mb-8 font-light">
+                    Rencanakan petualangan tak terlupakan Anda bersama kami.
+                </p>
+                <a href="#destinasi" class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-blue-700 transition-all shadow-lg transform hover:scale-105">
+                    Mulai Petualangan
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Informasi Destinasi, 5. Deskripsi, 6. Gambar Berkualitas -->
+        <section id="destinasi" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                    Destinasi Populer
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Kartu Destinasi 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+                        <img src="https://source.unsplash.com/600x400/?raja-ampat-islands" alt="Raja Ampat" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x400/007BFF/FFFFFF?text=Raja+Ampat'; this.onerror=null;">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Raja Ampat, Papua</h3>
+                            <p class="text-gray-600 mb-4">
+                                Surga tropis dengan keindahan bawah laut yang menakjubkan dan gugusan pulau karst yang ikonik.
+                            </p>
+                            <a href="#pesan" class="font-semibold text-blue-600 hover:text-blue-800">Pesan Sekarang &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Destinasi 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+                        <img src="https://source.unsplash.com/600x400/?ubud-rice-field" alt="Ubud, Bali" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x400/28A745/FFFFFF?text=Ubud,+Bali'; this.onerror=null;">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Ubud, Bali</h3>
+                            <p class="text-gray-600 mb-4">
+                                Pusat seni dan budaya Bali, dikelilingi oleh sawah terasering yang hijau dan suasana yang menenangkan.
+                            </p>
+                            <a href="#pesan" class="font-semibold text-blue-600 hover:text-blue-800">Pesan Sekarang &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Destinasi 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+                        <img src="https://source.unsplash.com/600x400/?mount-bromo" alt="Gunung Bromo" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x400/FFC107/333333?text=Gunung+Bromo'; this.onerror=null;">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Gunung Bromo, Jatim</h3>
+                            <p class="text-gray-600 mb-4">
+                                Nikmati pemandangan matahari terbit yang magis di atas lautan pasir dan kawah gunung berapi yang aktif.
+                            </p>
+                            <a href="#pesan" class="font-semibold text-blue-600 hover:text-blue-800">Pesan Sekarang &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Galeri Petualangan (Tambahan) -->
+        <section id="galeri" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                    Galeri Petualangan
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                    <!-- Gambar 1 -->
+                    <div class="overflow-hidden rounded-xl shadow-lg">
+                        <img src="https://source.unsplash.com/600x600/?borobudur-temple" alt="Candi Borobudur" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/9C27B0/FFFFFF?text=Borobudur'; this.onerror=null;">
+                    </div>
+                    <!-- Gambar 2 -->
+                    <div class="overflow-hidden rounded-xl shadow-lg">
+                        <img src="https://source.unsplash.com/600x600/?komodo-dragon" alt="Komodo Dragon" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/795548/FFFFFF?text=Komodo'; this.onerror=null;">
+                    </div>
+                    <!-- Gambar 3 -->
+                    <div class="overflow-hidden rounded-xl shadow-lg">
+                        <img src="https://source.unsplash.com/600x600/?bali-beach" alt="Pantai Bali" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/03A9F4/FFFFFF?text=Bali'; this.onerror=null;">
+                    </div>
+                    <!-- Gambar 4 -->
+                    <div class="overflow-hidden rounded-xl shadow-lg">
+                        <img src="https://source.unsplash.com/600x600/?indonesia-diving" alt="Diving Indonesia" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/00BCD4/FFFFFF?text=Diving'; this.onerror=null;">
+                    </div>
+                    <!-- Gambar 5 -->
+                    <div class="overflow-hidden rounded-xl shadow-lg">
+                        <img src="https://source.unsplash.com/600x600/?indonesia-waterfall" alt="Air Terjun Indonesia" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/4CAF50/FFFFFF?text=Waterfall'; this.onerror=null;">
+                    </div>
+                    <!-- Gambar 6 -->
+                    <div class="overflow-hidden rounded-xl shadow-lg">
+                        <img src="https://source.unsplash.com/600x600/?tana-toraja" alt="Tana Toraja" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/FF5722/FFFFFF?text=Toraja'; this.onerror=null;">
+                    </div>
+                    <!-- Gambar 7 -->
+                    <div class="overflow-hidden rounded-xl shadow-lg">
+                        <img src="https://source.unsplash.com/600x600/?lake-toba" alt="Danau Toba" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/3F51B5/FFFFFF?text=Toba'; this.onerror=null;">
+                    </div>
+                    <!-- Gambar 8 -->
+                    <div class="overflow-hidden rounded-xl shadow-lg">
+                        <img src="https://source.unsplash.com/600x600/?jakarta-cityscape" alt="Jakarta Cityscape" class="w-full h-64 object-cover transform hover:scale-110 transition-all duration-300 cursor-pointer" onerror="this.src='https://placehold.co/600x600/607D8B/FFFFFF?text=Jakarta'; this.onerror=null;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Tampilkan Promo dan Diskon -->
+        <section id="promo" class="py-16 md:py-24 bg-blue-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                    Promo dan Diskon Spesial
+                </h2>
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Banner Promo 1 -->
+                    <div class="flex-1 bg-gradient-to-r from-blue-600 to-sky-500 text-white p-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-6">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="tag" class="w-20 h-20 text-sky-200"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Diskon Libur Sekolah 30%</h3>
+                            <p class="mb-4">Rencanakan liburan keluarga Anda sekarang dan dapatkan potongan harga spesial untuk semua destinasi domestik.</p>
+                            <a href="#pesan" class="bg-white text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors">
+                                Klaim Promo
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Banner Promo 2 -->
+                    <div class="flex-1 bg-gradient-to-r from-green-600 to-emerald-500 text-white p-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-6">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="plane" class="w-20 h-20 text-emerald-200"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Cashback Tiket Pesawat</h3>
+                            <p class="mb-4">Pesan tiket pesawat ke Bali atau Lombok dan dapatkan cashback instan hingga Rp 250.000,-.</p>
+                            <a href="#pesan" class="bg-white text-green-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors">
+                                Cek Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Fitur Pemesanan Tiket -->
+        <section id="pesan" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                    Pesan Tiket Anda Sekarang
+                </h2>
+                <form id="booking-form" class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="destinasi" class="block text-sm font-medium text-gray-700 mb-2">Destinasi</label>
+                            <select id="destinasi" name="destinasi" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Pilih Destinasi</option>
+                                <option>Raja Ampat, Papua</option>
+                                <option>Ubud, Bali</option>
+                                <option>Gunung Bromo, Jatim</option>
+                                <option>Labuan Bajo, NTT</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="jumlah-tiket" class="block text-sm font-medium text-gray-700 mb-2">Jumlah Tiket</label>
+                            <input type="number" id="jumlah-tiket" name="jumlah-tiket" placeholder="Contoh: 2" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" min="1">
+                        </div>
+                        <div>
+                            <label for="tanggal-berangkat" class="block text-sm font-medium text-gray-700 mb-2">Tanggal Berangkat</label>
+                            <input type="date" id="tanggal-berangkat" name="tanggal-berangkat" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="tanggal-pulang" class="block text-sm font-medium text-gray-700 mb-2">Tanggal Pulang</button></label>
+                            <input type="date" id="tanggal-pulang" name="tanggal-pulang" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition-all shadow-lg transform hover:scale-105">
+                        <i data-lucide="search" class="inline-block -mt-1 mr-2 w-5 h-5"></i>
+                        Cari Tiket
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 7. Tampilkan Riwayat Perjalanan dan Testimoni -->
+        <section id="testimoni" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                    Apa Kata Mereka?
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimoni 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://source.unsplash.com/100x100/?man-portrait" alt="Testimoni" class="w-16 h-16 rounded-full mr-4 object-cover" onerror="this.src='https://placehold.co/100x100/E8F5E9/333333?text=AR'; this.onerror=null;">
+                            <div>
+                                <h4 class="text-xl font-bold">Andi Rahman</h4>
+                                <p class="text-gray-500">Traveler</p>
+                            </div>
+                        </div>
+                        <div class="text-yellow-500 mb-2">
+                            &#9733;&#9733;&#9733;&#9733;&#9733; <!-- 5 Bintang -->
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "Layanan dari JelajahNusantara luar biasa! Perjalanan saya ke Bromo sangat lancar dan berkesan. Terima kasih!"
+                        </p>
+                    </div>
+
+                    <!-- Testimoni 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://source.unsplash.com/100x100/?woman-portrait" alt="Testimoni" class="w-16 h-16 rounded-full mr-4 object-cover" onerror="this.src='https://placehold.co/100x100/FFF3E0/333333?text=SP'; this.onerror=null;">
+                            <div>
+                                <h4 class="text-xl font-bold">Siti Purnamasari</h4>
+                                <p class="text-gray-500">Keluarga</p>
+                            </div>
+                        </div>
+                        <div class="text-yellow-500 mb-2">
+                            &#9733;&#9733;&#9733;&#9733;&#9733; <!-- 5 Bintang -->
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "Promo liburannya sangat membantu. Anak-anak senang sekali bisa ke Bali dengan harga terjangkau. Proses booking juga mudah."
+                        </p>
+                    </div>
+
+                    <!-- Testimoni 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://source.unsplash.com/100x100/?male-portrait" alt="Testimoni" class="w-16 h-16 rounded-full mr-4 object-cover" onerror="this.src='https://placehold.co/100x100/E3F2FD/333333?text=BW'; this.onerror=null;">
+                            <div>
+                                <h4 class="text-xl font-bold">Budi Waseso</h4>
+                                <p class="text-gray-500">Backpacker</p>
+                            </div>
+                        </div>
+                        <div class="text-yellow-500 mb-2">
+                            &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 Bintang -->
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "Pilihan destinasinya lengkap. Saya harap ke depannya bisa ditambahkan lebih banyak paket untuk backpacker."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">
+                        Jelajah<span class="text-sky-400">Nusantara</span>
+                    </h3>
+                    <p class="mb-4">Partner perjalanan terbaik Anda untuk menjelajahi keindahan Indonesia.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Navigasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#destinasi" class="hover:text-white">Destinasi</a></li>
+                        <li><a href="#galeri" class="hover:text-white">Galeri</a></li>
+                        <li><a href="#promo" class="hover:text-white">Promo</a></li>
+                        <li><a href="#pesan" class="hover:text-white">Pesan Tiket</a></li>
+                        <li><a href="#testimoni" class="hover:text-white">Testimoni</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Perusahaan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white">Kontak</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-lucide="map-pin" class="w-5 h-5 mr-2 text-sky-400"></i>
+                            Jl. Merdeka No. 17, Jakarta
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="w-5 h-5 mr-2 text-sky-400"></i>
+                            (021) 123-4567
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 mr-2 text-sky-400"></i>
+                            info@jelajahnusantara.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-sm">
+                &copy; <span id="current-year"></span> JelajahNusantara. Semua Hak Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Inisialisasi Ikon Lucide
+        lucide.createIcons();
+
+        // Mengatur tahun saat ini di footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Fungsi untuk menampilkan pesan kustom (pengganti alert)
+        function showCustomMessage(message, isSuccess = true) {
+            const messageBox = document.getElementById('custom-message');
+            messageBox.textContent = message;
+            
+            // Atur warna berdasarkan sukses atau error
+            if (isSuccess) {
+                messageBox.className = 'bg-green-500 text-white';
+            } else {
+                messageBox.className = 'bg-red-500 text-white';
+            }
+            
+            messageBox.classList.add('show');
+            
+            // Sembunyikan pesan setelah 3 detik
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+            }, 3000);
+        }
+
+        // Menangani submit form pemesanan
+        const bookingForm = document.getElementById('booking-form');
+        bookingForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form submit
+            
+            // Validasi sederhana
+            const destinasi = document.getElementById('destinasi').value;
+            const jumlahTiket = document.getElementById('jumlah-tiket').value;
+            
+            if (destinasi === "Pilih Destinasi" || jumlahTiket === "" || jumlahTiket <= 0) {
+                showCustomMessage('Harap isi semua kolom dengan benar.', false);
+            } else {
+                // Tampilkan pesan sukses (simulasi)
+                showCustomMessage('Pencarian tiket berhasil! (Simulasi)', true);
+                // Di aplikasi nyata, di sini Anda akan mengarahkan ke halaman hasil atau mengambil data
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
